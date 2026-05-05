@@ -1,0 +1,14 @@
+YOLO(You Only Look Once) 모델의 주요 특징과 장점은 무엇인가요?
+
+이미지 전체를 작은 그리드로 나누고, 각 그리드 셀에서 객체의 중심이 존재할 가능성을 예측하는 그리드 예측방식. 이를 통해 전체 이미지를 한 번에 분석
+엔드 투 엔드 방식으로 모델안에서 바운딩박스와 클래스 예측
+
+빠른 속도와 높은 효율성
+
+mAP(mean Average Precision)의 개념이 무엇이며 객체 인식에서 어떻게 활용되는지 설명해주세요.
+
+mAP(mean Average Precision)는 객체 인식에서 모델이 예측한 객체의 위치와 클래스가 얼마나 정확하고 빠짐없이 탐지되었는지를 평가하는 대표적인 지표로, 
+먼저 예측된 bounding box와 실제 정답 box 간의 겹침 정도를 Intersection over Union으로 계산해 일정 기준 이상이면 정답(TP), 아니면 오탐(FP)으로 판단하고, 
+모든 예측 결과를 confidence score 기준으로 정렬한 뒤 하나씩 누적하면서 precision과 recall을 계산하여 그 관계를 나타내는 PR(Precision-Recall) 곡선을 만든 다음 해당 곡선 아래 면적을 Average Precision(AP)으로 구하며, 
+이러한 AP 값을 클래스별로 계산한 후 평균을 낸 값이 mAP으로서, 이는 YOLO (You Only Look Once)나 Faster R-CNN 같은 객체 탐지 모델의 성능을 정량적으로 비교하고 학습 과정에서 모델의 개선 정도를 판단하거나 
+서로 다른 모델 간 성능 평가 기준으로 활용된다.
